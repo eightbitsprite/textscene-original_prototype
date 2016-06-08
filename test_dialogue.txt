@@ -1,3 +1,5 @@
+$This is a comment and should be ignored.
+
 @ Luke stands alone in a room. He looks down at the ground.
 
 @Luke[Sadly] So that's it, then.#2
