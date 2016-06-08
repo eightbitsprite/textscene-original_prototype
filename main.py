@@ -56,10 +56,17 @@ class sceneLine:
         self.time = 1.0 if fields["time"] is None else float(fields["time"])
 
     def __str__(self):
+    	keyword = "" if self.keyword == "" else self.keyword + " "
+    	emote = "" if self.emote == "" else " (<i>" + self.emote + "</i>): "
+    	string = str(self.speaker) + emote + keyword + self.line
+    	return string
+
+    def debugString(self):
     	string =  "[SPEAKER: "+ str(self.speaker) + " (" + self.emote + ") "
     	string += str(self.line) + " TIME:" + str(self.time) + " "
     	string += "KEYWORD: " + str(self.keyword) + "]\n"
     	return string
+
 
 
 def read(infile):
@@ -89,7 +96,7 @@ def processing(infile, outfile):
 	lines = read(infile)
 	objects = process(lines)
 	for obj in objects:
-		print obj
+		print obj.debugString()
 	return False
 
 if __name__ == '__main__':
