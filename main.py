@@ -7,6 +7,8 @@ This program is designed to turn a formatted text file into an array of sceneLin
 which is then output into a json file for use in Javascript.
 
 Formatted text syntax is as follows:
+"$start$" should be placed at the beginning of a file. This is to prevent the accidental
+processing of non-source files.
 "@" indicates the beginning of a line of dialogue.
 	- An alphanumeric word should be appended to the '@' to indicate the 'speaker'.
 		If so desired, an 'emote' can be added with " [<emote>]". This is 
@@ -28,7 +30,7 @@ action description and italics will be applied.
 
 # Truncated version of following regex:
 #		(^@((?P<speaker>[\w]+) [\s]*
-#		( \[(?P<emote>[\w]+) \]|)  
+#		( \[(?P<emote>[\w]+) \]|)(:|)
 #			|!(?P<keyword>[\w]+)) [\s]* 
 #		|[\s]*)
 #		\b(?P<line>.[^#]+|) 
@@ -38,6 +40,7 @@ regex = re.compile(r"""
 		^@(								#Specify speaker/emote OR keyword	
 			(?P<speaker>[\w]+) [\s]*		#match specified 'speaker'
 			(\[(?P<emote>[\w]+) \]|)			#if present, match 'emote'
+			(:|)								#ignore potential ":" 
 				|							#OR
 			!(?P<keyword>[\w]+)				#match specified 'keyword'
 		) [\s]*
@@ -51,12 +54,6 @@ regex = re.compile(r"""
 		|
 	) [.]*
 	""", re.VERBOSE)
-
-class scene:
-	def __init__(self, sceneLines):
-		self.lines = []
-		for line in sceneLines:
-			self.lines.append(vars(line).copy())
 
 class sceneLine:
     def __init__(self, speaker, emote, line, keyword, time):
@@ -85,6 +82,14 @@ class sceneLine:
 def read(infile):
 	inputf = open(infile, "r")
 	lines = [] 
+	firstline = inputf.readline().strip()
+	if firstline.lower() != "$start$".lower():
+		error_str = "ERROR: File does not start with '$start$'.\n"
+		error_str += "Make sure that the inputfile is a source file "
+		error_str += "or change the first line to $start$\n"
+		print error_str
+		return None
+
 	for line in inputf:
 		if line[0] == "$":
 			print "IGNORING: " + line
@@ -122,6 +127,8 @@ def write(scene, outfile, compact):
 
 def processing(infile, outfile, compact):
 	lines = read(infile)
+	if lines is None:
+		return False
 	scene = process(lines)
 	#for obj in objects:
 		#print obj
@@ -130,11 +137,17 @@ def processing(infile, outfile, compact):
 	return result
 
 if __name__ == '__main__':
-	if len(sys.argv) != 4:
-		print "INPUT ERROR; try python main.py -[c(ompact)/p(retty)] [inputfile] [outputfile]"
+	args = len(sys.argv)
+	if args != 4:
+		print "INPUT ERROR; try python main.py -[c(ompact)/p(retty)] [inputfile] (outputfile)"
 	else:
 		compact = True if sys.argv[1] == "-c" else False
 		infile = sys.argv[2]
 		outfile = sys.argv[3]
-		result = processing(infile, outfile, compact)
-		print "PROCESSING SUCCESSFUL" if result else "PROCESSING UNSUCCESSFUL"
+
+		if infile == outfile:
+			print "Whoa! That'll overwrite your source file with your output." 
+			print "Try another argument for your output file."
+		else:
+			result = processing(infile, outfile, compact)
+			print "PROCESSING SUCCESSFUL" if result else "PROCESSING UNSUCCESSFUL"
