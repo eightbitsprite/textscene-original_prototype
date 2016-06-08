@@ -26,17 +26,39 @@ action description and italics will be applied.
 "$" is a comment character. Any line beginning with "$" will be absent from the final output.
 """
 
-class sceneLine:
-    def __init__(self, line, speaker=None, emote=None, time=1.0, keyword=None):
-        self.speaker = speaker
-        self.emote = emote
-        self.line = line
-        self.time = time
-        self.keyword = keyword
+# Truncated version of following regex:
+#		(^@((?P<speaker>[\w]+) [\s]*
+#		( \[(?P<emote>[\w]+) \]|)  
+#			|!(?P<keyword>[\w]+)) [\s]* 
+#		|[\s]*)
+#		\b(?P<line>.[^#]+|) 
+#		(\#(?P<time>[\d]+[\.]?[\d]*)|) [.]*
+regex = re.compile(r"""
+	(
+		^@(								#Specify speaker/emote OR keyword	
+			(?P<speaker>[\w]+) [\s]*		#match specified 'speaker'
+			(\[(?P<emote>[\w]+) \]|)			#if present, match 'emote'
+				|							#OR
+			!(?P<keyword>[\w]+)				#match specified 'keyword'
+		) [\s]*
+		| 								#Otherwise, ignore whitespace until...
+	[\s]*)									
+	(?P<line>.[^#]+|)  					#matches the main 'line' group
+	(\#(?P<time>[\d]+[\.]?[\d]*)|) [.]*	#if present, match specified 'time'
+	""", re.VERBOSE)
 
-    def __str__():
+class sceneLine:
+    def __init__(self, fields):
+        self.speaker = "" if fields["speaker"] is None else fields["speaker"]
+        self.emote = "" if fields["emote"] is None else fields["emote"]
+        self.line = "" if fields["line"] is None else fields["line"]
+        self.keyword = "" if fields["keyword"] is None else fields["keyword"]
+        self.time = 1.0 if fields["time"] is None else float(fields["time"])
+
+    def __str__(self):
     	string =  "[SPEAKER: "+ str(self.speaker) + " (" + self.emote + ") "
-    	string += str(self.line) + " TIME:" + str(self.time) + "\n"
+    	string += str(self.line) + " TIME:" + str(self.time) + " "
+    	string += "KEYWORD: " + str(self.keyword) + "]\n"
     	return string
 
 
@@ -54,33 +76,20 @@ def read(infile):
 
 def process(lines):
 	objects = []
-	# Truncated version of following regex:
-	#		(^@((?P<speaker>[\w]+) [\s]*
-	#		( \[(?P<emote>[\w]+) \]|)  
- 	#			|!(?P<keyword>[\w]+)) [\s]* 
-	#		|[\s]*)
-	#		\b(?P<line>.[^#]+|) 
-	#		(\#(?P<time>[\d]+[\.]?[\d]*)|) [.]*
-	regex = re.compile(r"""
-		(
-			^@(									
-				(?P<speaker>[\w]+) [\s]*		#if speaker is specified, matches that
-				(\[(?P<emote>[\w]+) \]|)		#then if emote is specified, matches that
-					|
-				!(?P<keyword>[\w]+)				#if keyword is specified, matches that
-			) [\s]*
-			| 
-		[\s]*)
-		(?P<line>.[^#]+|)  						#matches the main 'line' group
-		(\#(?P<time>[\d]+[\.]?[\d]*)|) [.]*		#if time is specified, matches that
-		""", re.VERBOSE)
-	#for line in lines:
+	for line in lines:
+		match_res = regex.match(line)
+		if match_res:
+			fields = match_res.groupdict()
+			sLine = sceneLine(fields)
+			objects.append(sLine)
+	return objects
 
 
 def processing(infile, outfile):
 	lines = read(infile)
-	print lines
 	objects = process(lines)
+	for obj in objects:
+		print obj
 	return False
 
 if __name__ == '__main__':
