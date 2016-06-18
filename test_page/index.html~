@@ -1,0 +1,17 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Textscene Test Page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <script src="test.out"></script>
+    <script src="js/script.js"></script>
+    <div id="logbox">
+        <button name="testStart">Click to start textscene.</button>
+    </div>
+</body>
+</html>

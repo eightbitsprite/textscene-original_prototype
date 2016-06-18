@@ -1,0 +1,32 @@
+var data = {
+    "lines": [
+        {
+            "line": "Luke stands alone in a room. He looks down at the ground.",
+            "speaker": "",
+            "emote": "",
+            "keyword": "",
+            "time": 1.0
+        },
+        {
+            "line": "So that's it, then.",
+            "speaker": "Luke",
+            "emote": "Sadly",
+            "keyword": "",
+            "time": 2.0
+        },
+        {
+            "line": "He sits down on a chair and sighs.",
+            "speaker": "",
+            "emote": "",
+            "keyword": "",
+            "time": 1.0
+        },
+        {
+            "line": "sadtrombone.mp3",
+            "speaker": "",
+            "emote": "",
+            "keyword": "play",
+            "time": 1.0
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+#logbox {
+    background: green;
+    margin: 5vw 10vh;
+    padding: 5vw 5vh;
+    border: 2px solid black;
+}
+
+.textbox {
+    background: white;
+    padding: 1vw 1vh;
+    margin-top: 10px;
+}
