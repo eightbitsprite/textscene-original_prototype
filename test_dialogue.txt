@@ -1,10 +1,51 @@
 $start$
-$This is a comment and should be ignored.
 
-Luke stands alone in a room. He looks down at the ground.
+HAPPENSTANCE
+by Peter Sagal #.75
 
-@Luke[Sadly] So that's it, then.#2
+@Martin: Yes. WE'll do that.
 
-He sits down on a chair and sighs.
+He puts the phone back in his pocket. Does his best to look casual. Looks into
+the crowd, and when he finds who he's looking for, picks up the paper again and
+manages a look of utter distraction just as Amy walks by.
 
-@!play sadtrombone.mp3
+@Martin[Surprised.] Amy?
+
+@Amy: Martin!
+
+They look at each other.
+
+@Amy: What a ...
+
+@Martin: I mean, once was crazy enough...
+
+@Amy: Coincidence, exactly. Wow. You're...
+
+@Martin: Heading home. And you...
+
+@Amy: Yeah. A week in Albuquerque. And you were...
+
+@Martin: St. Paul. Was it a good time?
+
+@Amy: Fine. Yeah.
+
+(Pause.)
+
+@Amy: Wow. I mean, I wonder if something is going on...
+
+@Martin: Like what?
+
+@Amy: I mean... I see you, first time in forever, in an airport, for god's
+sakes, and then, one week later...
+
+@Martin: It's O'Hare. Busiest airport in the world. Wait here long enough, you'd
+meet J.D. Salinger.
+
+@Amy: But still. Twice in a week? Not happenstance.
+
+@Martin: Happen...?
+
+@Amy: I read it once. Once is happenstance. Twice is coincidence. Three times is
+enemy action.
+
+@Martin: Let's not do this again, then.
