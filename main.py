@@ -30,7 +30,7 @@ action description and italics will be applied.
 
 # Truncated version of following regex:
 #		(^@((?P<speaker>[\w]+) [\s]*
-#		( \[(?P<emote>[\w]+) \]|)(:|)
+#		(([\w]|) \[(?P<emote>[\w]+) \]|)(:|)
 #			|!(?P<keyword>[\w]+)) [\s]* 
 #		|[\s]*)
 #		\b(?P<line>.[^#]+|) 
@@ -39,7 +39,7 @@ regex = re.compile(r"""
 	(
 		^@(								#Specify speaker/emote OR keyword	
 			(?P<speaker>[\w]+) [\s]*		#match specified 'speaker'
-			(\[(?P<emote>[\w]+) \]|)			#if present, match 'emote'
+			((" "|)\[(?P<emote>[\w.]+) \]|)			#if present, match 'emote'
 			(:|)								#ignore potential ":" 
 				|							#OR
 			!(?P<keyword>[\w]+)				#match specified 'keyword'
@@ -113,6 +113,7 @@ def process(lines):
 
 def write(scene, outfile, compact):
 	outputf = open(outfile, "w") 
+        outputf.write("var data = ")
 	lines = []
 	for line in scene:
 		lines.append(vars(line))

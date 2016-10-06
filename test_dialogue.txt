@@ -1,13 +1,13 @@
 $start$
 
 HAPPENSTANCE
-by Peter Sagal #.75
+by Peter Sagal #.6
 
-@Martin: Yes. WE'll do that.
+@Martin: Yes. We'll do that. #1.5
 
-He puts the phone back in his pocket. Does his best to look casual. Looks into the crowd, and when he finds who he's looking for, picks up the paper again and manages a look of utter distraction just as Amy walks by.
+He puts the phone back in his pocket. Does his best to look casual. Looks into the crowd, and when he finds who he's looking for, picks up the paper again and manages a look of utter distraction just as Amy walks by. 
 
-@Martin[Surprised.] Amy?
+@Martin[Surprised.] Amy? #2
 
 @Amy: Martin!
 
@@ -27,9 +27,7 @@ They look at each other.
 
 @Amy: Fine. Yeah.
 
-(Pause.)
-
-@Amy: Wow. I mean, I wonder if something is going on...
+@Amy: Wow. I mean, I wonder if something is going on...#2.5
 
 @Martin: Like what?
 
@@ -44,3 +42,5 @@ They look at each other.
 @Amy: I read it once. Once is happenstance. Twice is coincidence. Three times is enemy action.
 
 @Martin: Let's not do this again, then.
+
+(...)

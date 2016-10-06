@@ -40,7 +40,7 @@ nodeCreate = function(text) {
     console.log(ele);
     setTimeout(function () {
         document.getElementById('logbox').appendChild(ele);
-    }, 1000*text.time);
+    }, 700*text.time);
 }
 
 textProcess = function(text) {
@@ -53,9 +53,9 @@ textProcess = function(text) {
     if (text.speaker.length) {
         var speaker = text.speaker;
         if (text.emote.length) {
-            speaker = speaker + " [<em>" + text.emote + "</em>]: ";
+            speaker = speaker + " (<em>" + text.emote + "</em>)";
         }
-        return speaker + string;
+        return speaker + ": " + string;
     }
     return "<em>" + string + "</em>";
 }

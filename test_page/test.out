@@ -1,31 +1,164 @@
 var data = {
     "lines": [
         {
-            "line": "Luke stands alone in a room. He looks down at the ground.",
+            "line": "HAPPENSTANCE",
             "speaker": "",
             "emote": "",
             "keyword": "",
             "time": 1.0
         },
         {
-            "line": "So that's it, then.",
-            "speaker": "Luke",
-            "emote": "Sadly",
+            "line": "by Peter Sagal ",
+            "speaker": "",
+            "emote": "",
+            "keyword": "",
+            "time": 0.6
+        },
+        {
+            "line": "Yes. We'll do that. ",
+            "speaker": "Martin",
+            "emote": "",
+            "keyword": "",
+            "time": 1.5
+        },
+        {
+            "line": "He puts the phone back in his pocket. Does his best to look casual. Looks into the crowd, and when he finds who he's looking for, picks up the paper again and manages a look of utter distraction just as Amy walks by.",
+            "speaker": "",
+            "emote": "",
+            "keyword": "",
+            "time": 1.0
+        },
+        {
+            "line": "Amy? ",
+            "speaker": "Martin",
+            "emote": "Surprised.",
             "keyword": "",
             "time": 2.0
         },
         {
-            "line": "He sits down on a chair and sighs.",
+            "line": "Martin!",
+            "speaker": "Amy",
+            "emote": "",
+            "keyword": "",
+            "time": 1.0
+        },
+        {
+            "line": "They look at each other.",
             "speaker": "",
             "emote": "",
             "keyword": "",
             "time": 1.0
         },
         {
-            "line": "sadtrombone.mp3",
+            "line": "What a ...",
+            "speaker": "Amy",
+            "emote": "",
+            "keyword": "",
+            "time": 1.0
+        },
+        {
+            "line": "I mean, once was crazy enough...",
+            "speaker": "Martin",
+            "emote": "",
+            "keyword": "",
+            "time": 1.0
+        },
+        {
+            "line": "Coincidence, exactly. Wow. You're...",
+            "speaker": "Amy",
+            "emote": "",
+            "keyword": "",
+            "time": 1.0
+        },
+        {
+            "line": "Heading home. And you...",
+            "speaker": "Martin",
+            "emote": "",
+            "keyword": "",
+            "time": 1.0
+        },
+        {
+            "line": "Yeah. A week in Albuquerque. And you were...",
+            "speaker": "Amy",
+            "emote": "",
+            "keyword": "",
+            "time": 1.0
+        },
+        {
+            "line": "St. Paul. Was it a good time?",
+            "speaker": "Martin",
+            "emote": "",
+            "keyword": "",
+            "time": 1.0
+        },
+        {
+            "line": "Fine. Yeah.",
+            "speaker": "Amy",
+            "emote": "",
+            "keyword": "",
+            "time": 1.0
+        },
+        {
+            "line": "Wow. I mean, I wonder if something is going on...",
+            "speaker": "Amy",
+            "emote": "",
+            "keyword": "",
+            "time": 2.5
+        },
+        {
+            "line": "Like what?",
+            "speaker": "Martin",
+            "emote": "",
+            "keyword": "",
+            "time": 1.0
+        },
+        {
+            "line": "I mean... I see you, first time in forever, in an airport, for god's sakes, and then, one week later...",
+            "speaker": "Amy",
+            "emote": "",
+            "keyword": "",
+            "time": 1.0
+        },
+        {
+            "line": "It's O'Hare. Busiest airport in the world. Wait here long enough, you'd meet J.D. Salinger.",
+            "speaker": "Martin",
+            "emote": "",
+            "keyword": "",
+            "time": 1.0
+        },
+        {
+            "line": "But still. Twice in a week? Not happenstance.",
+            "speaker": "Amy",
+            "emote": "",
+            "keyword": "",
+            "time": 1.0
+        },
+        {
+            "line": "Happen...?",
+            "speaker": "Martin",
+            "emote": "",
+            "keyword": "",
+            "time": 1.0
+        },
+        {
+            "line": "I read it once. Once is happenstance. Twice is coincidence. Three times is enemy action.",
+            "speaker": "Amy",
+            "emote": "",
+            "keyword": "",
+            "time": 1.0
+        },
+        {
+            "line": "Let's not do this again, then.",
+            "speaker": "Martin",
+            "emote": "",
+            "keyword": "",
+            "time": 1.0
+        },
+        {
+            "line": "(...)",
             "speaker": "",
             "emote": "",
-            "keyword": "play",
+            "keyword": "",
             "time": 1.0
         }
     ]

@@ -1,4 +1,4 @@
-{
+var data = {
     "lines": [
         {
             "line": "HAPPENSTANCE",
@@ -12,14 +12,14 @@
             "speaker": "",
             "emote": "",
             "keyword": "",
-            "time": 0.75
+            "time": 0.6
         },
         {
-            "line": "Yes. WE'll do that.",
+            "line": "Yes. We'll do that. ",
             "speaker": "Martin",
             "emote": "",
             "keyword": "",
-            "time": 1.0
+            "time": 1.5
         },
         {
             "line": "He puts the phone back in his pocket. Does his best to look casual. Looks into the crowd, and when he finds who he's looking for, picks up the paper again and manages a look of utter distraction just as Amy walks by.",
@@ -29,11 +29,11 @@
             "time": 1.0
         },
         {
-            "line": "[Surprised.] Amy?",
+            "line": "Amy? ",
             "speaker": "Martin",
-            "emote": "",
+            "emote": "Surprised.",
             "keyword": "",
-            "time": 1.0
+            "time": 2.0
         },
         {
             "line": "Martin!",
@@ -99,18 +99,11 @@
             "time": 1.0
         },
         {
-            "line": "(Pause.)",
-            "speaker": "",
-            "emote": "",
-            "keyword": "",
-            "time": 1.0
-        },
-        {
             "line": "Wow. I mean, I wonder if something is going on...",
             "speaker": "Amy",
             "emote": "",
             "keyword": "",
-            "time": 1.0
+            "time": 2.5
         },
         {
             "line": "Like what?",
@@ -157,6 +150,13 @@
         {
             "line": "Let's not do this again, then.",
             "speaker": "Martin",
+            "emote": "",
+            "keyword": "",
+            "time": 1.0
+        },
+        {
+            "line": "(...)",
+            "speaker": "",
             "emote": "",
             "keyword": "",
             "time": 1.0
